@@ -9,10 +9,10 @@ public class GetFolderSize {
         File[] files = inputPat.listFiles();
         int size = 0;
 
-        for (int i = 0; i < files.length; i++) {
-            long currentSize = files[i].length();
+        for (File file : files) {
+            long currentSize = file.length();
+            String name = file.getName();
             size += currentSize;
-
         }
 
         System.out.println(String.format("Folder size: %d", size));
